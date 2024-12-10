@@ -1,4 +1,4 @@
-s_totaluse petgraph::graph::{Graph, NodeIndex};
+use petgraph::graph::{Graph, NodeIndex};
 use petgraph::Undirected;
 use std::collections::HashMap;
 use std::error::Error;
