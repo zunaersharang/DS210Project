@@ -1,2 +1,2 @@
 # DS210Project
-test
+This project explores graph algorithms and their application to analyze behavioral patterns in youth smoking and drug experimentation. The dataset includes various demographic and behavioral attributes of individuals, such as socioeconomic status, age group, and peer influence, providing a rich foundation for examining relationships within a network. The project offers insights into how network connectivity shapes individual behaviors The project investigates how shared attributes between individuals (peer influence, age group, and socioeconomic status) influence smoking prevalence and drug experimentation, evaluates degree distributions, analyzes distance-2 neighbors, and explores correlations between node connectivity and behavioral outcomes.
