@@ -40,3 +40,38 @@ pub fn analyze_behavior_by_degree(
             .and_modify(|count| *count += 1)
             .or_insert(1);
     }
+
+    behavior_by_degree.iter_mut().for_each(|(degree, (s_total, d_total))| {
+        let count = degree_totals[degree] as f32;
+        *s_total /= count;
+        *d_total /= count;
+    });
+
+    behavior_by_degree
+}
+
+pub fn compute_distance_2_neighbors(
+    graph: &Graph<(), (), Undirected>,
+) -> HashMap<NodeIndex, usize> {
+    let mut distance_2_counts = HashMap::new();
+
+    for node in graph.node_indices() {
+        let mut neighbors = HashMap::new();
+
+        for edge in graph.edges(node) {
+            let neighbor = edge.target();
+            for edge_2 in graph.edges(neighbor) {
+                let neighbor_2 = edge_2.target();
+                if neighbor_2 != node {
+                    neighbors.entry(neighbor_2).or_insert(());
+                }
+            }
+        }
+
+        distance_2_counts.insert(node, neighbors.len());
+    }
+
+    distance_2_counts
+}
+
+
