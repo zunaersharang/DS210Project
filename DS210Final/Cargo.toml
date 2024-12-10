@@ -1,0 +1,8 @@
+[package]
+name = "DS210Final"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+petgraph = "0.6"
+csv = "1.1"
